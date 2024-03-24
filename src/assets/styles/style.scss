@@ -1,0 +1,37 @@
+/* --------------------------------------------- 
+Template Name: Material Pro Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+/* --------------------------------------------- */
+
+
+@import 'variable';
+
+@import 'mixins/spacing';
+@import 'mixins/color';
+@import 'mixins/font';
+
+@import 'component/global';
+@import 'component/heading';
+
+@import 'component/header';
+@import 'component/sidebar';
+@import 'component/spinner';
+@import 'component/card';
+@import 'component/dashboard';
+
+@import 'responsive';
+
+@import "../styles/icons/material-design-iconic-font/css/materialdesignicons.min.css";
+/* You can add global styles to this file, and also import other style files */
+
+
+
+/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* Import Font Awesome styles */
+@import '~@fortawesome/fontawesome-free/css/all.css';

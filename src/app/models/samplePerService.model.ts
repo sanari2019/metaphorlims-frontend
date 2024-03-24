@@ -1,0 +1,98 @@
+// sample-per-service.model.ts
+
+import { Employee } from "./employee.model";
+import { SampleDetail } from "./sampleDetail.model";
+import { ServiceMaster } from "./serviceMaster.model";
+import { StatusMaster } from "./statusMaster.model";
+
+export class SamplePerService {
+    id: number;
+    sampleTypeId: number;
+    sampleNo: number;
+    serviceId: number;
+    departmentId: number;
+    collectionSiteId: number;
+    referalTypeId: number;
+    referredBy: string;
+    remarks: string;
+    labTechnician: number;
+    labSupervisor: number;
+    labDoctor: number;
+    statusId: number;
+    stageId: number;
+    histoNo: number;
+    encodedBy: number;
+    encodedDate: Date;
+    lastChangedBy: number;
+    lastChangeDate: Date;
+    patientId: number;
+    ulid: number;
+    clinicalRemarks: string;
+    provisionalResultDate: Date;
+    provisionalResultReleasedBy: number;
+    reportTypeId: number;
+    finalRemarks: string;
+    printStatus: boolean;
+    printLabelSatus: boolean;
+    testDateTime: Date;
+    redoDiagSampleId: boolean;
+    isRedone: boolean;
+    location: string;
+    employeeTypePhase: number;
+    serviceMaster: any[];
+    servmaster: ServiceMaster;
+    serviceMasters: ServiceMaster[];
+    statusMaster: StatusMaster;
+    user: number;
+    isHistoFilled: boolean;
+    sampleDetail: SampleDetail;
+    cemployee: Employee;
+    aemployee: Employee;
+    demployee: Employee;
+
+    constructor() {
+        this.id = 0;
+        this.sampleTypeId = 0;
+        this.sampleNo = 0;
+        this.serviceId = 0;
+        this.departmentId = 0;
+        this.collectionSiteId = 0;
+        this.referalTypeId = 0;
+        this.referredBy = '';
+        this.remarks = '';
+        this.labTechnician = 0;
+        this.labSupervisor = 0;
+        this.labDoctor = 0;
+        this.statusId = 0;
+        this.stageId = 0;
+        this.histoNo = 0;
+        this.encodedBy = 0;
+        this.encodedDate = new Date();
+        this.lastChangedBy = 0;
+        this.lastChangeDate = new Date();
+        this.patientId = 0;
+        this.ulid = 0;
+        this.clinicalRemarks = '';
+        this.provisionalResultDate = new Date();
+        this.provisionalResultReleasedBy = 0;
+        this.reportTypeId = 0;
+        this.finalRemarks = '';
+        this.printStatus = false;
+        this.printLabelSatus = false;
+        this.testDateTime = new Date();
+        this.redoDiagSampleId = false;
+        this.isRedone = false;
+        this.location = '';
+        this.employeeTypePhase = 0;
+        this.serviceMaster = [];
+        this.serviceMasters = [];
+        this.user = 0;
+        this.statusMaster = new StatusMaster();
+        this.isHistoFilled = false;
+        this.sampleDetail = new SampleDetail();
+        this.servmaster = new ServiceMaster();
+        this.cemployee = new Employee();
+        this.aemployee = new Employee();
+        this.demployee = new Employee();
+    }
+}

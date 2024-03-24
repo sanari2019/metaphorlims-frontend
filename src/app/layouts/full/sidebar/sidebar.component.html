@@ -1,0 +1,852 @@
+<!-- ============================================================== -->
+<!-- sidebar -->
+<!-- ============================================================== -->
+ 
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Registration
+        </h6>
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+       <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+          <a
+            [routerLink]="['/registration/r/demographic']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDemographic="routerLinkActive"
+            [ngClass]="
+              adminDemographic.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminDemographic.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Demographics
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/registration/r/attach-file']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminAttach="routerLinkActive"
+            [ngClass]="
+              adminAttach.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminAttach.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Attach File
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/registration/r/clinical-history']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminClinical="routerLinkActive"
+            [ngClass]="
+                adminClinical.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminClinical.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Clinical History
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/registration/r/consent-form']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminConsent="routerLinkActive"
+            [ngClass]="
+              adminConsent.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminConsent.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Consent Form
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Administration
+        </h6>
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+       <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/dashboard']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDashboard="routerLinkActive"
+            [ngClass]="
+              adminDashboard.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Master Setup
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/approval']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminApproval="routerLinkActive"
+            [ngClass]="
+              adminApproval.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminApproval.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Employee
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/settings']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Company
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Departments
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Special Rights
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/settings']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Service Setup
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Equipment & Service Tag
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Maps
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+   
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+        <a
+        [routerLink]="['/phlebotomy']"
+        class="text-xs uppercase py-3 font-bold block px-6"
+        routerLinkActive
+        #adminPhleb="routerLinkActive"
+        [ngClass]="
+          adminPhleb.isActive
+            ? 'text-green-600 hover:text-green-700'
+            : 'text-blueGray-700 hover:text-blueGray-500'
+        "
+      >
+         Phlebotomy
+        </a>
+        </h6>
+       
+       
+     
+       <!-- Navigation -->
+
+     
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Histopathology
+        </h6>
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+       <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+          <a
+            [routerLink]="['/histology']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDashboard="routerLinkActive"
+            [ngClass]="
+              adminDashboard.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            PlayGround
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/approval']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminApproval="routerLinkActive"
+            [ngClass]="
+              adminApproval.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminApproval.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            UnAcknowledgement
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/settings']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Processing
+          </a>
+        </li>
+
+        <!--<li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Redo Sample Processing
+          </a>
+        </li>-->
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Report Processing
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Report Dispatch
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Specimen Management
+        </h6>
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+       <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/dashboard']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDashboard="routerLinkActive"
+            [ngClass]="
+              adminDashboard.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/approval']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminApproval="routerLinkActive"
+            [ngClass]="
+              adminApproval.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminApproval.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Approvals
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/settings']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Settings
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Tables
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Maps
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Inventory
+        </h6>
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+       <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/dashboard']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDashboard="routerLinkActive"
+            [ngClass]="
+              adminDashboard.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/approval']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminApproval="routerLinkActive"
+            [ngClass]="
+              adminApproval.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminApproval.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Approvals
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/settings']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Settings
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Tables
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Maps
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           <!-- Heading -->
+          <h6
+          class="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+        >
+          Reporting
+        </h6>
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+       <!-- Navigation -->
+
+      <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/dashboard']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminDashboard="routerLinkActive"
+            [ngClass]="
+              adminDashboard.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/approval']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminApproval="routerLinkActive"
+            [ngClass]="
+              adminApproval.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tv mr-2 text-sm"
+              [ngClass]="
+                adminApproval.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Approvals
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/settings']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminSettings="routerLinkActive"
+            [ngClass]="
+              adminSettings.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-tools mr-2 text-sm"
+              [ngClass]="
+                adminSettings.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Settings
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/tables']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminTables="routerLinkActive"
+            [ngClass]="
+              adminTables.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-table mr-2 text-sm"
+              [ngClass]="
+                adminTables.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Tables
+          </a>
+        </li>
+
+        <li class="items-center">
+          <a
+            [routerLink]="['/admin/maps']"
+            class="text-xs uppercase py-3 font-bold block"
+            routerLinkActive
+            #adminMaps="routerLinkActive"
+            [ngClass]="
+              adminMaps.isActive
+                ? 'text-green-600 hover:text-green-700'
+                : 'text-blueGray-700 hover:text-blueGray-500'
+            "
+          >
+            <i
+              class="fas fa-map-marked mr-2 text-sm"
+              [ngClass]="
+                adminMaps.isActive ? 'opacity-75' : 'text-blueGray-300'
+              "
+            ></i>
+            Maps
+          </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>

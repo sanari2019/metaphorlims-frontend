@@ -1,0 +1,48 @@
+
+
+
+<!-- component -->
+<div class="bg-gradient-to-r from-slate-900 via-blue-500 to-blue-900 h-screen">
+  <div class="login-page h-100 space-between">
+    
+  
+    
+    <div class="form flex flex-col items-center justify-center mx-auto lg:py-0">
+
+    
+      <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+        <img class="" src="assets/images/logo_met.png" alt="logo">
+     
+    </a>
+   
+    <div class="text-center mb-16">
+      <h1 class="text-white">Welcome back!</h1>
+    </div>
+      <form class="register-form">
+        <input type="text" placeholder="name"/>
+        <input type="password" placeholder="password"/>
+        <input type="text" placeholder="email address"/>
+        <button>create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form>
+      <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <input type="text" placeholder="username"  formControlName="username"/>
+        <input type="password" placeholder="password" formControlName="password"/>
+        <button class="bg-blue-500" type="submit"  [disabled]="!loginForm.valid">login</button>
+        <p class="message text-white">Forgot password? <a [routerLink]="['/auth/reset-password']" class="f-w-400">Reset</a></p>
+      </form>
+      <!-- Display unauthorized message -->
+      <div *ngIf="unauthorizedMessage" class="text-red-600 text-center mb-3">
+        {{ unauthorizedMessage }}
+      </div>
+  
+    </div>
+ <!-- Copyright notice -->
+ <div class="text-center text-white dark:text-white mb-4">
+  &copy; MataphorLIMS2024
+</div>
+    
+  </div>
+ 
+</div>
+

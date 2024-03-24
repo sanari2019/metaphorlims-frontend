@@ -1,0 +1,109 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container"> 
+    <!-- ============================================================== -->
+    <!-- Topbar - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <mat-toolbar class="topbar telative h-8 bg-blue-900">
+        <!-- ============================================================== -->
+        <!-- Logo - style you can find in header.scss -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">
+                <!-- Logo icon --><b fxHide.gt-xs>
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <img src="assets/images/logo_met.png" alt="homepage" class="dark-logo">
+                    <!-- Light Logo icon -->
+                    <div class="w-6 h-6">
+                    <img src="assets/images/logoo.jpg" alt="homepage" class="light-logo">
+                    </div>
+                </b>
+                <!--End Logo icon -->
+                <!-- Logo text -->
+                <span fxShow="false" fxShow.gt-xs>
+                 <!-- dark Logo text -->
+                 <img src="assets/images/logo_met.png" alt="homepage" class="dark-logo">
+                 <!-- Light Logo text -->    
+                 <img src="assets/images/logo_met.png" class="light-logo" alt="homepage">
+                </span> </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- sidebar toggle -->
+        <!-- ============================================================== -->
+
+
+  
+        
+         <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+            <mat-icon class="text-white">menu</mat-icon>
+        </button>
+       
+
+       <!-- <button mat-icon-button (click)="toggleSidenav()" value="sidebarclosed">
+            <div class="group flex cursor-pointer items-center justify-center p-2">
+                <div class="space-y-2">
+                    <span class="block h-1 w-10 origin-center rounded-full bg-slate-500" [@sidenavAnimation]="sidenavState"></span>
+                    <span class="block h-1 w-8 origin-center rounded-full bg-orange-500" [@secondSpanAnimation]="sidenavState"></span>
+                </div>
+            </div>
+          </button>-->
+
+                <!-- Display the full date -->
+    <div class="full-date text-white text-sm" fxShow="false" fxShow.gt-xs>
+        {{ currentDate | date:'fullDate' }}
+    </div>
+        <span fxFlex></span>
+        <div class="profile-text"><a [matMenuTriggerFor]="sdprofile" class="">  <h4 class="text-left  text-blue-300 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold px-0" *ngIf="isUserAuthenticated()">
+            Welcome {{user?.firstName}}
+          </h4><i class="ti-angle-down font-12 m-l-5"></i></a></div>
+        <mat-menu #sdprofile="matMenu" class="mymegamenu">
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon> Settings </button>
+            <button mat-menu-item>
+                <mat-icon>account_box</mat-icon> Profile </button>
+            <button mat-menu-item>
+                <mat-icon>notifications_off</mat-icon> Disable notifications </button>
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon> Sign Out </button>
+        </mat-menu>
+        <!-- ============================================================== -->
+        <!-- app header component - style you can find in header.scss / header.component.ts-->
+        <!-- ============================================================== -->
+        <app-header></app-header>
+    </mat-toolbar>
+    <!-- ============================================================== -->
+    <!-- End Topbar - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'over' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches"    >
+            
+                <app-sidebar></app-sidebar>
+               
+            
+        </mat-sidenav>
+        <!-- ============================================================== -->
+        <!-- Sidebar - style you can find in sidebar.scss -->
+        <!-- ============================================================== -->
+        
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <mat-sidenav-content class="page-wrapper h-full">
+                 
+                <div>
+                   
+                        <router-outlet><app-spinner></app-spinner></router-outlet>
+                    
+                </div>    
+               
+        </mat-sidenav-content>
+        <!-- ============================================================== -->
+        <!-- Page container - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+    </mat-sidenav-container>
+</div>

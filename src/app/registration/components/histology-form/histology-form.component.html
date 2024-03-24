@@ -1,0 +1,92 @@
+<div class="items-center px-4 md:px-10 mx-auto w-full mb-12 overflow-auto px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center">
+    
+    <!-- Save and Close Buttons -->
+    <div class="mt-6 px-4 flex items-center justify-between col-1">
+      <h2 class="text-xl font-bold">Histology Requisition</h2>
+      <span class="text-xs italic">for ULID -{{data.sampleData.ulid}} - SAMPLE NO-{{data.sampleData.sampleNo}}</span>
+      <div class="flex items-center space-x-4"  >
+        <button *ngIf="!data?.sampleData?.histoNo && data.sampleData.histoNo === 0" (click)="Onsubmit()" type="submit" class="bg-black text-white rounded-md text-sm px-4 py-2">
+          Save
+        </button>
+        <button type="button" class="bg-black text-white rounded-md text-sm px-4 py-2" (click)="onCloseClick()">
+          Close
+        </button>
+      </div>
+    </div>
+    
+    <div class="mt-8 py-2 px-4 flex flex-wrap items-center text-center">
+      <form [formGroup]="histologyForm" (ngSubmit)="Onsubmit()">
+        <div class="grid md:grid-cols-4 md:gap-6">
+          <!-- Requisition Type -->
+          <div class="relative z-0 w-full mb-5 group col-span-1 lg:col-span-1">
+            <label>
+              <span class="text-gray-700">Requisition Type</span>
+              <select formControlName="requisitionType" class="block w-full mt-1 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                <option value="Frozen Section">Frozen Section</option>
+                <option value="Routine Histopathology">Routine Histopathology</option>
+                <option value="Immunohistochemistry">Immunohistochemistry</option>
+                <option value="Immunofluorescence">Immunofluorescence</option>
+              </select>
+            </label>
+          </div>
+          <!-- Specimen Type -->
+          <div class="relative z-0 w-full mb-5 group col-span-1 lg:col-span-1">
+            <label>
+              <span class="text-gray-700">Specimen Type</span>
+              <input formControlName="specimenType" type="text" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="">
+            </label>
+          </div>
+          <!-- Specimen Site -->
+          <div class="relative z-0 w-full mb-5 group col-span-1 lg:col-span-1">
+            <label>
+              <span class="text-gray-700">Specimen Site</span>
+              <input formControlName="specimenSite" type="text" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" placeholder="">
+            </label>
+          </div>
+          <!-- Previous Biopsy -->
+          <div class="relative z-0 w-full mb-5 group col-span-1 lg:col-span-1">
+            <label>
+              <span class="text-gray-700">Previous Biopsy</span>
+              <select formControlName="previousBiopsy" class="block w-full mt-1 rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <!-- Textarea for SUTURE TAG -->
+        <div class="grid md:grid-cols-2 md:gap-6">
+          <div class="relative z-0 w-full mb-5 group col-span-1 lg:col-span-1">
+            <label>
+              <span class="text-gray-700">SUTURE TAG (if present placement)</span>
+              <textarea formControlName="sutureTag" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
+            </label>
+          </div>
+          <!-- Textarea for CLINICAL DETAILS AND INVESTIGATION -->
+          <div class="relative z-0 w-full mb-5 group col-span-1 lg:col-span-1">
+            <label>
+              <span class="text-gray-700">CLINICAL DETAILS AND INVESTIGATION</span>
+              <textarea formControlName="clinicalDetails" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
+            </label>
+          </div>
+        </div>
+        <!-- OPERATIVE FINDINGS -->
+        <label>
+          <span class="text-gray-700">OPERATIVE FINDINGS</span>
+          <textarea formControlName="operativeFindings" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
+        </label>
+        <!-- PROVISIONAL CLINICAL DIAGNOSIS -->
+        <label>
+          <span class="text-gray-700">PROVISIONAL CLINICAL DIAGNOSIS</span>
+          <textarea formControlName="provisionalDiagnosis" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
+        </label>
+        <!-- INVESTIGATION REQUESTED -->
+        <label>
+          <span class="text-gray-700">INVESTIGATION REQUESTED</span>
+          <textarea formControlName="investigationRequested" class="mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0" rows="3"></textarea>
+        </label>
+        
+      </form>
+    </div>
+  </div>
+  

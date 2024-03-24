@@ -1,0 +1,200 @@
+
+<div mat-dialog-content>
+  
+ 
+<div mat-dialog-actions class="float-right bg-white">
+  <button mat-button><i class="fa fa-print" aria-hidden="true"></i> Label</button>
+  <button mat-button><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+
+  <button mat-button><i class="fa fa-file" aria-hidden="true"></i> Report</button>
+
+  <button mat-button (click)="closeDialog()"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</button>
+</div>
+
+<div class=" mx-auto w-full">
+    <div
+  class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded"
+  [ngClass]="color === 'light' ? 'bg-white' : 'bg-red-900 text-white'"
+>
+
+  <div class="rounded-t border-0">
+    <div class="flex items-center align-middle border border-solid  text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left w-full">
+      <div class="relative px-4 mt-4 ">
+        <h3 mat-dialog-title
+          class="font-semibold  text-sm"
+          [ngClass]="color === 'light' ? 'text-blueGray-700' : 'text-white'"
+        >
+          Sample Detail
+        </h3>
+           
+      </div>
+     
+        <div
+            class="lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center  flex-grow flex-1" *ngIf="samples && samples.length > 0 && samples[0]?.sampleDetail"
+        >
+
+        <button class="bg-red-600 active:bg-red-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+         *ngIf="samples[0].statusMaster.status === 'Not Collected' &&!samples[0].sampleDetail?.sampleCollected && employee.isPhlebotomist == true && ((samples[0].departmentId===14 && sample.isHistoFilled) || (samples[0].departmentId!==14))" (click)="collect()">Collect</button>
+        <button class="bg-red-600 active:bg-red-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+         *ngIf="samples[0].statusMaster.status === 'Collected' && !samples[0].sampleDetail.sampleDispatched" (click)="dispatch()"> Dispatch</button>
+        <button class="bg-red-600 active:bg-red-700 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+         *ngIf="samples[0].statusMaster.status === 'Collected' && !samples[0].sampleDetail.sampleDispatched && !samples[0].sampleDetail.sampleAcknowledged"> Manage</button>
+        <!--<button *ngIf="sample[0].statusMaster.status === 'Dispatched' && !samples[0].sampleDetail.sampleAcknowledged">Cancel</button>-->
+           
+        </div>
+    </div>
+  </div>
+  <div class="py-2 px-4">
+ 
+      
+
+          
+         
+      
+                <!-- Table to show items -->
+                <div
+  class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded"
+  [ngClass]="color === 'dark' ? 'bg-white' : 'bg-red-900 text-white'"
+>
+  <div class="rounded-t mb-0 px-4 py-3 border-0">
+    
+  <div class="block w-full overflow-x-auto">
+
+              
+
+                <table class="items-center w-full bg-transparent border-collapse">
+      <thead>
+        <tr>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'dark'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Service Name
+          </th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-center"
+            [ngClass]="
+              color === 'dark'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Instruction
+          </th>
+         <!-- <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'dark'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+            Status
+          </th>-->
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'dark'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+        
+        </th>
+        <!--<th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'dark'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        ></th>
+        <th
+        class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+        [ngClass]="
+          color === 'dark'
+            ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+            : 'bg-red-800 text-red-300 border-red-700'
+        "
+      ></th>-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sample of samples">
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
+          >{{sample.servmaster.serviceName}}</td>
+          
+          <!--<td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+          </td>-->
+          <!--<td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <i class="fas fa-circle text-orange-500 mr-2"></i> Awaiting your approval
+          </td>
+        
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <div class="flex items-center"> </div>
+          </td>-->
+          <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-center"
+          >
+            {{sample.clinicalRemarks}}
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
+            >
+            <div *ngIf="sample.departmentId===14">
+              <mat-icon class=" animate-pulse ..." matTooltip="Complete the histology registration so you can collect"  *ngIf="!sample.isHistoFilled" > warning</mat-icon>
+              <mat-icon matTooltip="Completed the histology registration"  *ngIf=" sample.isHistoFilled"> check</mat-icon>
+            </div>
+           
+          
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+
+  </div>
+ 
+</div>
+
+
+<div >
+    <div *ngIf="samples && samples.length > 0 && samples[0]?.sampleDetail" class="w-full bg-black/20 grid md:grid-cols-3 md:gap-6">
+        <div *ngIf="samples[0]?.sampleDetail?.sampleCollected">
+            <small>Collected by:<br>
+                <span>{{samples[0]?.cemployee?.firstName}} {{samples[0]?.cemployee?.middleName}}</span><br>
+                <span>{{samples[0]?.sampleDetail?.collectedDate}}</span>
+            </small>
+        </div>
+        <div *ngIf="samples[0]?.sampleDetail?.sampleDispatched">
+            <small>Dispatched by:<br>
+                <span>{{samples[0]?.demployee?.firstName}} {{samples[0]?.demployee?.middleName}}</span><br>
+                <span>{{samples[0]?.sampleDetail?.dispatchDate}}</span></small>
+        </div>
+        <div *ngIf="samples[0]?.sampleDetail?.sampleAcknowledged">
+            <small>Acknowledged By:<br>
+                <span>{{samples[0]?.aemployee?.firstName}} {{samples[0]?.aemployee?.middleName}}</span><br>
+                <span>{{samples[0]?.sampleDetail?.acknowledgedDate}}</span></small>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+</div>
+
