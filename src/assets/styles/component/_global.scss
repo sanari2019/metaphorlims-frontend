@@ -6,17 +6,20 @@
 }
 
 body {
-  font-family: $bodyfont;
+  font-family: 'Poppins', sans-serif;
+  /* $bodyfont */
   margin: 0;
   overflow-x: hidden;
-  color: $bodytext;
+  color: #67757c;
+  /* $bodytext */
   font-weight: 300;
 }
 
 html {
   position: relative;
   min-height: 100%;
-  background: $white;
+  background: #ffffff;
+  /* $white */
 }
 
 .main-container {
@@ -31,7 +34,8 @@ html {
 }
 
 .mat-drawer-container {
-  background: $bodycolor;
+  background: #eef5f9;
+  /* $bodycolor */
 }
 
 html .page-wrapper {
@@ -53,12 +57,14 @@ a {
 }
 
 a.link {
-  color: $headingtext;
+  color: #455a64;
+  /* $headingtext */
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $themecolor;
+    color: #1e88e5;
+    /* $themecolor */
   }
 }
 
@@ -71,7 +77,8 @@ a.link {
 hr {
   border: 0px;
   height: 1px;
-  background: $border;
+  background: rgba(120, 130, 140, 0.13);
+  /* $border */
 }
 
 html body .mdi:before,
@@ -82,13 +89,16 @@ html body .mdi-set {
 code {
   padding: 0.2rem 0.4rem;
   font-size: 90%;
-  color: $danger;
-  background-color: $light-danger;
+  color: #fc4b6c;
+  /* $danger */
+  background-color: #f9e7eb;
+  /* $light-danger */
   border-radius: 0.25rem;
 }
 
 .box {
-  border-radius: $radius;
+  border-radius: 4px;
+  /* $radius */
   padding: 10px;
 }
 
@@ -145,7 +155,8 @@ html body {
   }
 
   .rounded {
-    border-radius: $radius;
+    border-radius: 4px;
+    /* $radius */
   }
 
   //   flex
@@ -178,7 +189,8 @@ html body {
   }
 
   .radius {
-    border-radius: $radius;
+    border-radius: 4px;
+    /* $radius */
   }
 
   .no-shadow {
@@ -217,22 +229,27 @@ html body {
   }
 
   .b-r {
-    border-right: 1px solid $border;
+    border-right: 1px solid rgba(120, 130, 140, 0.13);
+    /* $border */
   }
 
   .b-l {
-    border-left: 1px solid $border;
+    border-left: 1px solid rgba(120, 130, 140, 0.13);
+    /* $border */
   }
 
   .b-b {
-    border-bottom: 1px solid $border;
+    border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+    /* $border */
   }
 
   .b-t {
-    border-top: 1px solid $border;
+    border-top: 1px solid rgba(120, 130, 140, 0.13);
+    /* $border */
   }
 
   .b-all {
-    border: 1px solid $border;
+    border: 1px solid rgba(120, 130, 140, 0.13);
+    /* $border */
   }
 }

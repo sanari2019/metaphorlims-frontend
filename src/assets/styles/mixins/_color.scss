@@ -1,23 +1,23 @@
-$color-array:(primary: $primary,
-  secondary: $secondary,
-  success: $success,
-  info: $info,
-  purple: $purple,
-  warning: $warning,
-  danger: $danger,
-  light: $light,
-  dark: $dark,
-  muted: $muted,
-  white: $white,
+$color-array: (
+  primary: #7460ee,
+  secondary: #727b84,
+  success: #26c6da,
+  info: #1e88e5,
+  purple: #7460ee,
+  warning: #ffb22b,
+  danger: #fc4b6c,
+  light: #f2f4f8,
+  dark: #263238,
+  muted: #99abb4,
+  white: #ffffff,
 );
 
-@each $color-name,
-$color-value in $color-array {
-  .text-#{"" + $color-name} {
+@each $color-name, $color-value in $color-array {
+  .text-#{$color-name} {
     color: $color-value;
   }
 
-  .bg-#{"" + $color-name} {
+  .bg-#{$color-name} {
     background-color: $color-value;
   }
 }

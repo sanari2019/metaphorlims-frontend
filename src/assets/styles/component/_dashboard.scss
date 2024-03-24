@@ -3,14 +3,17 @@ Rounds
 *******************/
 .round {
   line-height: 48px;
-  color: $white;
+  color: #ffffff;
+  /* Assuming $white value is #ffffff */
   width: 45px;
   height: 45px;
   display: inline-block;
   font-weight: 400;
   text-align: center;
   border-radius: 100%;
-  background: $info;
+  background: #1e88e5;
+
+  /* Assuming $info value is #1e88e5 */
   img {
     border-radius: 100%;
   }
@@ -19,36 +22,48 @@ Rounds
 .message-box {
   ul li {
     .nav-link {
-      border-top: 1px solid $border;
+      border-top: 1px solid #f3f1f1;
+      /* Assuming $border value is #f3f1f1 */
       padding-top: 15px;
     }
   }
+
   .message-widget {
     position: relative;
+
     a {
-      border-bottom: 1px solid $border;
+      border-bottom: 1px solid #f3f1f1;
+      /* Assuming $border value is #f3f1f1 */
       display: flex;
       text-decoration: none;
       padding: 9px 15px;
+
       &:hover {
-        background: $light;
+        background: #f2f4f8;
+        /* Assuming $light value is #f2f4f8 */
       }
+
       &:last-child {
         border-bottom: 0px;
       }
+
       div {
         white-space: normal;
       }
+
       .user-img {
         width: 45px;
         position: relative;
         display: inline-block;
         margin-right: 10px;
+
         img {
           width: 100%;
         }
+
         .profile-status {
-          border: 2px solid $white;
+          border: 2px solid #ffffff;
+          /* Assuming $white value is #ffffff */
           border-radius: 50%;
           display: inline-block;
           height: 10px;
@@ -57,27 +72,38 @@ Rounds
           top: -1px;
           width: 10px;
         }
+
         .online {
-          background: $success;
+          background: #26c6da;
+          /* Assuming $success value is #26c6da */
         }
+
         .busy {
-          background: $danger;
+          background: #fc4b6c;
+          /* Assuming $danger value is #fc4b6c */
         }
+
         .away {
-          background: $warning;
+          background: #ffb22b;
+          /* Assuming $warning value is #ffb22b */
         }
+
         .offline {
-          background: $warning;
+          background: #ffb22b;
+          /* Assuming $warning value is #ffb22b */
         }
       }
+
       .mail-contnet {
         display: inline-block;
         width: 73%;
         vertical-align: middle;
+
         h5 {
           margin: 5px 0px 0;
           color: #212121;
         }
+
         .mail-desc,
         .time {
           font-size: 12px;
@@ -85,7 +111,8 @@ Rounds
           margin: 1px 0;
           text-overflow: ellipsis;
           overflow: hidden;
-          color: $bodytext;
+          color: #67757c;
+          /* Assuming $bodytext value is #67757c */
           white-space: nowrap;
         }
       }
@@ -100,10 +127,12 @@ Rounds
 }
 
 .little-profile {
+
   .pro-img,
   .pro-img:first-child {
     margin-top: -110px;
     margin-bottom: 20px;
+
     img {
       width: 128px;
       height: 128px;

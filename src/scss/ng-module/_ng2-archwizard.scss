@@ -4,12 +4,15 @@
       border-radius: 5px !important;
     }
   }
+
   .centered-content {
     text-align: center;
   }
-  .wizard-steps{
+
+  .wizard-steps {
     border-radius: 5px;
-    border:1px solid $theme-border;
+    border: 1px solid #e2e5e8;
+    /* Replaced $theme-border with #e2e5e8 */
     padding: 20px;
   }
 
@@ -19,14 +22,15 @@
 
   .small ul.steps-indicator li.current:after,
   .small ul.steps-indicator li.editing:after {
-    background-color: $primary-color !important;
+    background-color: #4680ff !important;
+    /* Replaced $primary-color with #4680ff */
   }
 
   .large-filled-symbols ul.steps-indicator li.current:after,
   .large-filled-symbols ul.steps-indicator li.editing:after {
-    background-color: $primary-color !important;
+    background-color: #4680ff !important;
+    /* Replaced $primary-color with #4680ff */
     color: #fff !important;
-
   }
 
   .large-filled-symbols ul.steps-indicator li.done:after {
@@ -35,8 +39,10 @@
 
   .large-empty-symbols ul.steps-indicator li.current:after,
   .large-empty-symbols ul.steps-indicator li.editing:after {
-    border-color: $primary-color !important;
-    color: $primary-color !important;
+    border-color: #4680ff !important;
+    /* Replaced $primary-color with #4680ff */
+    color: #4680ff !important;
+    /* Replaced $primary-color with #4680ff */
   }
 
   aw-wizard-navigation-bar.horizontal.large-filled-symbols ul.steps-indicator li .step-indicator {

@@ -11,7 +11,7 @@
 
     .download-icon {
         color: #fff;
-        background-color: rgba(255,255,255,0.5);
+        background-color: rgba(255, 255, 255, 0.5);
         position: absolute;
         height: 125px;
         width: 125px;
@@ -42,6 +42,7 @@
             font-size: 15px;
         }
     }
+
     overflow: hidden;
 }
 
@@ -52,7 +53,7 @@
         padding-top: 0;
 
         .table {
-            > thead > tr > th {
+            >thead>tr>th {
                 border-top: 0;
             }
 
@@ -74,6 +75,7 @@
             }
 
             tr {
+
                 td,
                 th {
                     &:first-child {
@@ -103,7 +105,7 @@
             &:after {
                 content: "";
                 position: absolute;
-                background: $theme-border;
+                background: #e2e5e8;
                 height: 100%;
                 width: 1px;
                 top: 0;
@@ -126,6 +128,7 @@
                     margin-left: 10px;
                 }
             }
+
             @media only screen and (max-width: 575px) {
                 &:after {
                     display: none;
@@ -151,7 +154,7 @@
             height: 50px;
         }
 
-        > div {
+        >div {
             padding-top: 25px;
             padding-bottom: 25px;
             margin-left: 0;
@@ -160,7 +163,7 @@
             padding-right: 5px;
 
             &:hover {
-                background-color: transparentize($primary-color, 0.9);
+                background-color: transparentize(#4680ff, 0.9);
             }
         }
     }
@@ -176,7 +179,7 @@
             height: 130px;
             border-radius: 50%;
             border: 6px dashed #d6d6d6;
-            border-top-color: $success-color;
+            border-top-color: #9ccc65;
             border-bottom-color: transparent;
             padding: 45px;
             display: block;
@@ -186,7 +189,7 @@
                 content: "";
                 width: 90px;
                 height: 90px;
-                background-color: transparentize($success-color,0.5);
+                background-color: transparentize(#9ccc65, 0.5);
                 border-radius: 50%;
                 position: absolute;
                 top: 15px;
@@ -203,6 +206,7 @@
         }
     }
 }
+
 // =====  todo ======
 
 .to-do-list {
@@ -256,6 +260,7 @@
     color: #919aa3;
     text-decoration: line-through;
 }
+
 // ======= todo end ==========
 
 .trafic-card {
@@ -263,23 +268,23 @@
         height: 7px;
 
         &.blue {
-            background-color: transparentize($primary-color, 0.5);
+            background-color: transparentize(#4680ff, 0.5);
         }
 
         &.green {
-            background-color: transparentize($success-color, 0.5);
+            background-color: transparentize(#9ccc65, 0.5);
         }
 
         &.red {
-            background-color: transparentize($danger-color, 0.5);
+            background-color: transparentize(#4680ff, 0.5);
         }
 
         &.purple {
-            background-color: transparentize($purple-color, 0.5);
+            background-color: transparentize(#4680ff, 0.5);
         }
 
         &.yellow {
-            background-color: transparentize($warning-color, 0.5);
+            background-color: transparentize(#ffba57, 0.5);
         }
     }
 }
@@ -318,7 +323,7 @@
             position: absolute;
             bottom: 0;
             right: -5px;
-            background-color: $danger-color;
+            background-color: #4680ff;
             color: #fff;
             font-size: 10px;
             border-radius: 50%;
@@ -341,7 +346,7 @@
         &:after {
             content: "";
             position: absolute;
-            background: $theme-border;
+            background: #e2e5e8;
             height: 100%;
             width: 2px;
             top: 0;
@@ -352,7 +357,7 @@
         &:before {
             content: "";
             position: absolute;
-            background: $theme-border;
+            background: #e2e5e8;
             height: 15px;
             width: 15px;
             bottom: -14px;
@@ -403,6 +408,7 @@
                     margin-left: 10px;
                 }
             }
+
             @media only screen and (max-width: 575px) {
                 .update-meta {
                     z-index: 2;
@@ -449,7 +455,7 @@
     }
 
     &:hover {
-        background-color: $primary-color;
+        background-color: #4680ff;
 
         h4,
         h6,
@@ -472,8 +478,9 @@
 
             a {
                 i {
-                    color: $theme-font-color;
+                    color: #373a3c;
                 }
+
                 font-size: 20px;
                 margin: 0 10px 0 0;
                 transition: all 0.3s ease-in-out;
@@ -652,42 +659,47 @@
         }
     }
 }
+
 @keyframes blue-blink-bar {
     0% {
-        box-shadow: 0 0 0 0 transparentize($primary-color,0.9);
+        box-shadow: 0 0 0 0 transparentize(#4680ff, 0.9);
     }
 
     50% {
-        box-shadow: 0 0 0 6px transparentize($primary-color,0.7);
+        box-shadow: 0 0 0 6px transparentize(#4680ff, 0.7);
     }
 }
+
 @keyframes green-blink-bar {
     0% {
-        box-shadow: 0 0 0 0 transparentize($success-color,0.9);
+        box-shadow: 0 0 0 0 transparentize(#9ccc65, 0.9);
     }
 
     50% {
-        box-shadow: 0 0 0 6px transparentize($success-color,0.7);
+        box-shadow: 0 0 0 6px transparentize(#9ccc65, 0.7);
     }
 }
+
 @keyframes red-blink-bar {
     0% {
-        box-shadow: 0 0 0 0 transparentize($danger-color,0.9);
+        box-shadow: 0 0 0 0 transparentize(#4680ff, 0.9);
     }
 
     50% {
-        box-shadow: 0 0 0 6px transparentize($danger-color,0.7);
+        box-shadow: 0 0 0 6px transparentize(#4680ff, 0.7);
     }
 }
+
 @keyframes yellow-blink-bar {
     0% {
-        box-shadow: 0 0 0 0 transparentize($warning-color,0.9);
+        box-shadow: 0 0 0 0 transparentize(#ffba57, 0.9);
     }
 
     50% {
-        box-shadow: 0 0 0 6px transparentize($warning-color,0.7);
+        box-shadow: 0 0 0 6px transparentize(#ffba57, 0.7);
     }
 }
+
 // statustic card end
 
 .statustic-progress-card {
@@ -746,6 +758,7 @@
         }
     }
 }
+
 // ===========================================================================
 
 .flat-card {
@@ -780,7 +793,7 @@
             margin-right: 0;
         }
 
-        > [class*=col-] {
+        >[class*=col-] {
             display: table-cell;
             float: none;
             table-layout: fixed;
@@ -807,11 +820,12 @@
         padding-top: 0;
 
         .table {
-            > thead > tr > th {
+            >thead>tr>th {
                 border-top: 0;
             }
 
             tr {
+
                 td,
                 th {
                     &:first-child {
@@ -839,11 +853,12 @@
 
 .stastic-slider-full-card {
     .carousel-item {
-        transition: transform 12s linear,-webkit-transform 12s linear;
+        transition: transform 12s linear, -webkit-transform 12s linear;
     }
 }
 
 .statstic-data-card {
+
     .active.carousel-item-right,
     .carousel-item-next:not(.carousel-item-left) {
         transform: translateY(100%);
@@ -858,11 +873,11 @@
         border-top: 2px solid transparent;
 
         &.level-down {
-            border-color: $danger-color;
+            border-color: #4680ff;
         }
 
         &.level-up {
-            border-color: $success-color;
+            border-color: #9ccc65;
         }
     }
 }
@@ -915,19 +930,20 @@
         }
     }
 
-    ~ .card-footer [class*=col-] {
+    ~.card-footer [class*=col-] {
         border-right: 1px solid #fff;
 
         &:last-child {
             border: none;
         }
     }
+
     @media only screen and(max-width:767px) {
-        ~ .card-footer [class*=col-]:nth-child(2) {
+        ~.card-footer [class*=col-]:nth-child(2) {
             border: 0;
         }
 
-        ~ .card-footer [class*=col-]:last-child {
+        ~.card-footer [class*=col-]:last-child {
             margin-top: 10px;
         }
     }
@@ -986,7 +1002,7 @@
         }
     }
 
-    ~ .card-footer {
+    ~.card-footer {
         [class*="col-"] {
             padding: 10px;
             border-right: 1px solid rgba(255, 255, 255, 0.57);
@@ -1004,6 +1020,7 @@
                 text-transform: uppercase;
             }
         }
+
         @media only screen and (max-width:767px) {
             [class*="col-"]:nth-child(2) {
                 border: none;
@@ -1041,6 +1058,7 @@
                 border-right: none;
             }
         }
+
         @media only screen and(max-width:767px) {
             [class*="col-"]:nth-child(2) {
                 border: 0;
@@ -1086,8 +1104,9 @@
         color: #fff;
     }
 
-    ~ .card-footer {
+    ~.card-footer {
         border-top: none;
+
         @media only screen and(max-width:575px) {
             [class*="col-"] {
                 margin-bottom: 10px;
@@ -1118,7 +1137,7 @@
                 width: 10px;
                 height: 10px;
                 border-radius: 50%;
-                background: $success-color;
+                background: #9ccc65;
             }
         }
     }
@@ -1147,7 +1166,7 @@
             height: 40px;
         }
 
-        > div {
+        >div {
             padding-top: 15px;
             padding-bottom: 9px;
             margin-left: 0;
@@ -1156,7 +1175,7 @@
             padding-right: 5px;
 
             &:hover {
-                background-color: transparentize($primary-color, 0.9);
+                background-color: transparentize(#4680ff, 0.9);
             }
         }
     }
@@ -1166,7 +1185,7 @@
     .card-header {
         i {
             font-size: 17px;
-            color: $inverse-color;
+            color: #263238;
             position: relative;
         }
 
@@ -1174,7 +1193,7 @@
             &:after {
                 content: '';
                 position: absolute;
-                background-color: $danger-color;
+                background-color: #4680ff;
                 height: 8px;
                 width: 8px;
                 border-radius: 50px;
@@ -1186,7 +1205,7 @@
     .send-chat {
         $chat-color: #eae9e9;
         position: relative;
-        background: lighten($primary-color, 30%);
+        background: lighten(#4680ff, 30%);
         padding: 7px;
         border-radius: 0 10px 10px 10px;
         font-size: 13px;
@@ -1198,8 +1217,8 @@
             height: 12px;
             width: 12px;
             border: 6px solid transparent;
-            border-top: 6px solid lighten($primary-color, 30%);
-            border-right: 6px solid lighten($primary-color, 30%);
+            border-top: 6px solid lighten(#4680ff, 30%);
+            border-right: 6px solid lighten(#4680ff, 30%);
             left: -12px;
             top: 0;
         }
@@ -1213,7 +1232,7 @@
 
     .receive-chat {
         @extend .send-chat;
-        background-color: $primary-color;
+        background-color: #4680ff;
         color: #fff;
         border-radius: 10px;
 
@@ -1249,7 +1268,7 @@
 
     .received-chat {
         .msg {
-            background: lighten($primary-color, 30%);
+            background: lighten(#4680ff, 30%);
             border-radius: 0 5px 5px 5px;
 
             &:after {
@@ -1259,7 +1278,7 @@
                 top: -7px;
                 transform: rotate(45deg);
                 border: 7px solid transparent;
-                border-bottom-color: lighten($primary-color, 30%);
+                border-bottom-color: lighten(#4680ff, 30%);
             }
         }
     }
@@ -1268,7 +1287,7 @@
         text-align: right;
 
         .msg {
-            background: $primary-color;
+            background: #4680ff;
             color: #fff;
             border-radius: 5px 0 5px 5px;
 
@@ -1279,7 +1298,7 @@
                 top: -7px;
                 transform: rotate(45deg);
                 border: 7px solid transparent;
-                border-right-color: $primary-color;
+                border-right-color: #4680ff;
             }
         }
     }
@@ -1313,6 +1332,6 @@
     }
 }
 
-.bg-pattern{
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%234680ff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")
+.bg-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%234680ff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")
 }

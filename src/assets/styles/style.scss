@@ -6,7 +6,7 @@ File: scss
 /* --------------------------------------------- */
 
 
-@import 'variable';
+
 
 @import 'mixins/spacing';
 @import 'mixins/color';
@@ -35,3 +35,6 @@ File: scss
 @import 'tailwindcss/utilities';
 /* Import Font Awesome styles */
 @import '~@fortawesome/fontawesome-free/css/all.css';
+
+/* styles.css or styles.scss */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';

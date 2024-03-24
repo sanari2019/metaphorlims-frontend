@@ -23,9 +23,8 @@ $foreground: map-get($theme, foreground);
 
 @include mat-core();
 
-$custom-typography: mat-typography-config(
-  $font-family: 'Poppins, sans-serif'
-);
+$custom-typography: mat-typography-config($font-family: 'Poppins, sans-serif'
+  );
 
 // Override the typography in the core CSS.
 @include mat-core($custom-typography);

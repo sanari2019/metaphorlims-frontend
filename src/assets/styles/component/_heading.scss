@@ -8,7 +8,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $headingfont;
+  font-family: 'Poppins', sans-serif;
+  /* Assuming $headingfont value is 'Poppins', sans-serif */
   font-weight: 400;
 }
 
@@ -49,6 +50,7 @@ body {
   .display-5 {
     font-size: 3rem;
   }
+
   .display-6 {
     font-size: 36px;
   }
